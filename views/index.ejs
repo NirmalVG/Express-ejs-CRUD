@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ejs CRUD</title>
+    </head>
+    <body>
+        <form method="POST" action="/post">
+            <label>Enter name : </label>
+            <input type="text" name="pname" placeholder="Product Name" />
+            <br />
+            <label>Price : </label>
+            <input type="text" name="pprice" placeholder="Product Price" />
+            <br />
+            <button type="submit">Add</button>
+        </form>
+        <h2>Product Details</h2>
+        <table border="2">
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <% for(var i=0; i < test.length; i++){ %>
+            <tr>
+                <td><%= test[i].pname %></td>
+                <td><%= test[i].pprice %></td>
+                <td>
+                    <a href="/<%= test[i].pname %>"><button>Edit</button></a>
+                    <a href="/delete/<%= test[i].pname %>"><button>Delete</button></a>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+html
+head 
+title Person 
+body 
+    form(action="/postdata", method="POST")
+        div 
+            label(for="name") Name
+            input(type="text", name="name")
+        br
+        div
+            label(for="email") Email
+            input(type="text", name="email")
+        br
+        button(type="submit") Submit
